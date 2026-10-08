@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>国際関係学ノート</title>
+<meta name="description" content="国際関係学を勉強している学生の、勉強の記録とコラムのサイト。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#6495ed;
+  --blue-deep:#2f5fb8;
+  --ink:#1d2b45;
+  --paper:#f5f9ff;
+  --line:#d6e4fb;
+  --soft:#e8f0fd;
+  --mark:#fff3a8;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);font-family:var(--sans);line-height:1.85;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+a{color:var(--blue-deep)}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+/* header */
+header{background:var(--blue);color:#fff}
+.bar{max-width:960px;margin:0 auto;padding:14px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.logo{font-family:var(--serif);font-weight:800;font-size:1.25rem;color:#fff;text-decoration:none;letter-spacing:.04em}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:6px;flex-wrap:wrap}
+nav a{display:block;padding:4px 14px;border-radius:999px;color:#fff;text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{background:rgba(255,255,255,.22)}
+nav a[aria-current="page"]{background:#fff;color:var(--blue-deep);font-weight:700}
+nav a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+
+main{max-width:960px;margin:0 auto;padding:0 20px 40px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:48px 0 36px}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.3;margin:0 0 14px;letter-spacing:.03em}
+.hero h1 span{background:linear-gradient(transparent 62%,var(--mark) 62%)}
+.hero p{margin:0 0 20px;max-width:34em}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:9px 20px;border-radius:6px;font-weight:700;text-decoration:none;border:2px solid var(--blue)}
+.btn.main{background:var(--blue);color:#fff}
+.btn.sub{background:#fff;color:var(--blue-deep)}
+.btn:hover{background:var(--blue-deep);border-color:var(--blue-deep);color:#fff}
+.globe{width:100%;max-width:300px;justify-self:center;height:auto}
+
+/* notebook sections */
+section{margin-top:28px}
+.page{background:#fff;border:2px solid var(--blue);border-radius:4px;padding:26px 28px 26px 52px;position:relative;
+  background-image:repeating-linear-gradient(transparent 0,transparent 33px,var(--soft) 33px,var(--soft) 34px);
+  box-shadow:4px 4px 0 var(--soft)}
+.page::before{content:"";position:absolute;left:36px;top:0;bottom:0;border-left:2px solid #ffb3b3}
+.page::after{content:"";position:absolute;left:10px;top:24px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--blue);box-shadow:0 70px 0 -0px var(--paper),0 70px 0 0 var(--blue)}
+h2{font-family:var(--serif);font-size:1.45rem;margin:0 0 4px;line-height:1.5}
+.lead{margin:0 0 16px;font-size:.92rem;color:#4a5d80}
+
+/* study topics */
+.topics{list-style:none;margin:0;padding:0}
+.topics li{padding:10px 0;border-bottom:1px dashed var(--line)}
+.topics li:last-child{border-bottom:0}
+.topics b{font-family:var(--serif);font-size:1.05rem;margin-right:8px}
+.tag{display:inline-block;font-size:.78rem;padding:0 9px;margin:2px 4px 2px 0;border-radius:4px;background:var(--soft);color:var(--blue-deep);font-weight:500}
+
+/* blog preview */
+.post{padding:12px 0;border-bottom:1px dashed var(--line)}
+.post:last-of-type{border-bottom:0}
+.post time{font-size:.85rem;font-weight:700;color:var(--blue-deep);display:block}
+.post p{margin:2px 0 0}
+.more{display:inline-block;margin-top:10px;font-weight:700}
+
+/* column preview */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+.note{background:var(--soft);border-left:5px solid var(--blue);padding:12px 14px;border-radius:2px;line-height:1.7}
+.note small{display:block;font-weight:700;color:var(--blue-deep);margin-bottom:2px}
+.note:nth-child(2){transform:rotate(.6deg)}
+.note:nth-child(3){transform:rotate(-.5deg)}
+
+footer{background:var(--blue-deep);color:#fff;text-align:center;padding:22px 20px;font-size:.88rem}
+footer a{color:#fff}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;padding-top:32px}
+  .globe{max-width:220px;order:-1}
+  .cols{grid-template-columns:1fr}
+  .note:nth-child(n){transform:none}
+  .page{padding:22px 18px 22px 40px}
+  .page::before{left:26px}
+  .page::after{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html">国際関係学ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html" aria-current="page">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="column.html">コラム</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div>
+      <h1>世界のしくみを、<br><span>自分の言葉で</span>説明できるようになるまで。</h1>
+      <p>国際関係学を勉強中の学生が、学んだことと考えたことをノートのように残していくサイトです。理論も時事も、分からないところも、そのまま書いていきます。</p>
+      <div class="btns">
+        <a class="btn main" href="blog.html">勉強の記録を見る</a>
+        <a class="btn sub" href="column.html">コラムを読む</a>
+      </div>
+    </div>
+
+    <svg class="globe" viewBox="0 0 300 300" role="img" aria-label="経線と緯線が描かれた地球儀。いくつかの点が線でつながっている">
+      <circle cx="150" cy="150" r="120" fill="#fff" stroke="#6495ed" stroke-width="4"/>
+      <g fill="none" stroke="#6495ed" stroke-width="1.6" opacity=".55">
+        <ellipse cx="150" cy="150" rx="60" ry="120"/>
+        <ellipse cx="150" cy="150" rx="105" ry="120"/>
+        <line x1="150" y1="30" x2="150" y2="270"/>
+        <line x1="30" y1="150" x2="270" y2="150"/>
+        <path d="M44 100 Q150 128 256 100"/>
+        <path d="M44 200 Q150 172 256 200"/>
+      </g>
+      <g fill="none" stroke="#2f5fb8" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 7">
+        <path d="M95 98 Q150 40 205 112"/>
+        <path d="M205 112 Q235 160 170 205"/>
+        <path d="M170 205 Q110 215 95 98"/>
+      </g>
+      <g fill="#2f5fb8" stroke="#fff" stroke-width="2.5">
+        <circle cx="95" cy="98" r="7"/>
+        <circle cx="205" cy="112" r="7"/>
+        <circle cx="170" cy="205" r="7"/>
+      </g>
+    </svg>
+  </div>
+
+  <section aria-labelledby="study">
+    <div class="page">
+      <h2 id="study">いま勉強していること</h2>
+      <p class="lead">テーマごとに、キーワードをメモしています。</p>
+      <ul class="topics">
+        <li><b>国際政治理論</b><span class="tag">リアリズム</span><span class="tag">リベラリズム</span><span class="tag">コンストラクティビズム</span></li>
+        <li><b>安全保障</b><span class="tag">抑止</span><span class="tag">同盟</span><span class="tag">安全保障のジレンマ</span></li>
+        <li><b>国際機構と国際法</b><span class="tag">国連</span><span class="tag">条約</span><span class="tag">集団安全保障</span></li>
+        <li><b>国際政治経済</b><span class="tag">貿易</span><span class="tag">経済制裁</span><span class="tag">グローバル化</span></li>
+        <li><b>地域研究・外交史</b><span class="tag">冷戦</span><span class="tag">東アジア</span><span class="tag">ヨーロッパ統合</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="blog">
+    <div class="page">
+      <h2 id="blog">最近の勉強ログ</h2>
+      <p class="lead">ブログは日付とひとことだけの、短い日記形式です。（以下はサンプル）</p>
+      <div class="post">
+        <time datetime="2026-10-07">2026.10.07</time>
+        <p>ウォルツの『国際政治の理論』を読み始めた。第一イメージ〜第三イメージの整理だけで1時間かかった。</p>
+      </div>
+      <div class="post">
+        <time datetime="2026-10-05">2026.10.05</time>
+        <p>安全保障のジレンマを、自分の言葉で友達に説明してみた。「お互い守りたいだけなのに不安が増える」でなんとか伝わった。</p>
+      </div>
+      <div class="post">
+        <time datetime="2026-10-02">2026.10.02</time>
+        <p>国連安保理の拒否権について復習。常任理事国5か国、暗記は完了。</p>
+      </div>
+      <a class="more" href="blog.html">ブログをもっと見る</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="column">
+    <div class="page">
+      <h2 id="column">コラム</h2>
+      <p class="lead">漫画・イラスト・4コマと、小論文形式の軽い記事を置く予定です。</p>
+      <div class="cols">
+        <div class="note"><small>4コマ</small>リアリズム vs リベラリズム、ゼミでの出来事</div>
+        <div class="note"><small>小論文</small>「国益」って、結局だれのもの？</div>
+        <div class="note"><small>イラスト</small>国連の仕組みを1枚の図にしてみた</div>
+      </div>
+      <a class="more" href="column.html">コラムをもっと見る</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p style="margin:0">© 2026 国際関係学ノート ／ <a href="about.html">このサイトについて</a></p>
+</footer>
+
+</body>
+</html>
