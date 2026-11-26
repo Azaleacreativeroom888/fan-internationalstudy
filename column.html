@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コラム｜国際関係学ノート</title>
+<meta name="description" content="国際関係学に関する4コマ漫画・イラスト・小論文形式の軽い記事を置くコラムページ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#6495ed;
+  --blue-deep:#2f5fb8;
+  --ink:#1d2b45;
+  --paper:#f5f9ff;
+  --line:#d6e4fb;
+  --soft:#e8f0fd;
+  --mark:#fff3a8;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);font-family:var(--sans);line-height:1.85;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+a{color:var(--blue-deep)}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+header{background:var(--blue);color:#fff}
+.bar{max-width:960px;margin:0 auto;padding:14px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.logo{font-family:var(--serif);font-weight:800;font-size:1.25rem;color:#fff;text-decoration:none;letter-spacing:.04em}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:6px;flex-wrap:wrap}
+nav a{display:block;padding:4px 14px;border-radius:999px;color:#fff;text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{background:rgba(255,255,255,.22)}
+nav a[aria-current="page"]{background:#fff;color:var(--blue-deep);font-weight:700}
+nav a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+
+main{max-width:960px;margin:0 auto;padding:36px 20px 48px}
+h1{font-family:var(--serif);font-weight:800;font-size:clamp(1.7rem,4.5vw,2.2rem);margin:0 0 6px;line-height:1.4}
+h1 span{background:linear-gradient(transparent 62%,var(--mark) 62%)}
+.intro{margin:0 0 18px;font-size:.95rem;color:#4a5d80}
+
+/* jump links */
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px;padding:0;list-style:none}
+.jump a{display:block;padding:3px 14px;border:2px solid var(--blue);border-radius:6px;background:#fff;font-weight:700;font-size:.9rem;text-decoration:none}
+.jump a:hover{background:var(--blue);color:#fff}
+
+section{margin-top:30px}
+.page{background:#fff;border:2px solid var(--blue);border-radius:4px;padding:26px 28px 28px 52px;position:relative;
+  background-image:repeating-linear-gradient(transparent 0,transparent 33px,var(--soft) 33px,var(--soft) 34px);
+  box-shadow:4px 4px 0 var(--soft)}
+.page::before{content:"";position:absolute;left:36px;top:0;bottom:0;border-left:2px solid #ffb3b3}
+h2{font-family:var(--serif);font-size:1.45rem;margin:0 0 4px;line-height:1.5}
+.lead{margin:0 0 16px;font-size:.92rem;color:#4a5d80}
+
+/* placeholders (replace with <img>) */
+.ph{display:grid;place-items:center;text-align:center;background:var(--soft);border:2px dashed var(--blue);border-radius:4px;color:var(--blue-deep);font-weight:700;font-size:.9rem;padding:12px}
+.ph small{display:block;font-weight:400;color:#4a5d80;font-size:.78rem}
+img{max-width:100%;height:auto}
+
+/* 4koma */
+.item-title{font-weight:700;margin:0 0 8px}
+.koma{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:760px}
+.koma .ph{aspect-ratio:1/1;background:#fff}
+.koma-note{font-size:.88rem;margin:8px 0 0;color:#4a5d80}
+
+/* illustrations */
+.illust{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.illust figure{margin:0}
+.illust .ph{aspect-ratio:4/3;background:#fff}
+.illust figcaption{font-size:.88rem;margin-top:6px}
+
+/* essay */
+.essay{max-width:34em}
+.essay h3{font-family:var(--serif);font-size:1.3rem;margin:0 0 2px;line-height:1.5}
+.meta{font-size:.85rem;font-weight:700;color:var(--blue-deep);margin:0 0 14px}
+.essay h4{font-size:.95rem;margin:18px 0 0;color:var(--blue-deep)}
+.essay p{margin:2px 0 0}
+.mark{background:linear-gradient(transparent 62%,var(--mark) 62%)}
+
+footer{background:var(--blue-deep);color:#fff;text-align:center;padding:22px 20px;font-size:.88rem}
+footer a{color:#fff}
+
+@media (max-width:720px){
+  .page{padding:22px 18px 24px 40px}
+  .page::before{left:26px}
+  .koma{grid-template-columns:repeat(2,1fr)}
+  .illust{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html">国際関係学ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="column.html" aria-current="page">コラム</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1><span>コラム</span></h1>
+  <p class="intro">勉強したことを、漫画・イラスト・短い小論文にしてまとめています。（以下はサンプル）</p>
+  <ul class="jump" aria-label="ページ内リンク">
+    <li><a href="#koma">4コマ</a></li>
+    <li><a href="#illust">イラスト</a></li>
+    <li><a href="#essay">小論文</a></li>
+  </ul>
+
+  <section id="koma" aria-labelledby="h-koma">
+    <div class="page">
+      <h2 id="h-koma">4コマ漫画</h2>
+      <p class="lead">難しい理論も、漫画にするとちょっと分かりやすくなる…はず。</p>
+      <p class="item-title">第1話「リアリズム vs リベラリズム」</p>
+      <!-- 画像に差し替える例：<img src="images/koma1-1.png" alt="1コマ目の説明"> -->
+      <div class="koma">
+        <div class="ph">1コマ目<small>画像を入れる</small></div>
+        <div class="ph">2コマ目<small>画像を入れる</small></div>
+        <div class="ph">3コマ目<small>画像を入れる</small></div>
+        <div class="ph">4コマ目<small>画像を入れる</small></div>
+      </div>
+      <p class="koma-note">ゼミで先生に「どっちの立場？」と聞かれて固まった話。</p>
+    </div>
+  </section>
+
+  <section id="illust" aria-labelledby="h-illust">
+    <div class="page">
+      <h2 id="h-illust">イラスト</h2>
+      <p class="lead">図解やキャラクターなど、勉強の内容を絵にしたものです。</p>
+      <div class="illust">
+        <figure><div class="ph">イラスト1<small>画像を入れる</small></div><figcaption>国連の仕組みを1枚の図にしてみた</figcaption></figure>
+        <figure><div class="ph">イラスト2<small>画像を入れる</small></div><figcaption>冷戦の年表（擬人化バージョン）</figcaption></figure>
+        <figure><div class="ph">イラスト3<small>画像を入れる</small></div><figcaption>安全保障のジレンマのイメージ図</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="essay" aria-labelledby="h-essay">
+    <div class="page">
+      <h2 id="h-essay">小論文</h2>
+      <p class="lead">短めの、考えたことのメモです。（文章はサンプルなので、自分の考えに書き換えてね）</p>
+      <article class="essay">
+        <h3>「国益」って、結局だれのもの？</h3>
+        <p class="meta"><time datetime="2026-10-08">2026.10.08</time></p>
+
+        <h4>はじめに</h4>
+        <p>国際関係の授業では「国益」という言葉が何度も出てくる。でも、聞くたびに「それは誰の利益なんだろう？」とひっかかっていた。</p>
+
+        <h4>考えたこと</h4>
+        <p>リアリズムの考え方では、国家は<span class="mark">安全と生き残りを最優先する一つのまとまり</span>として描かれる。分かりやすい反面、国の中には企業も市民も政治家もいて、望むことはバラバラのはずだ。</p>
+        <p>一方で、国内の利害の違いに目を向けるリベラリズムの視点なら、外交政策は「国内のいろいろな立場がぶつかった結果」として説明できる。こちらのほうが現実に近い気もする。</p>
+
+        <h4>おわりに</h4>
+        <p>「国益」は便利な言葉だけど、使うときは「誰にとっての、どんな利益か」を一度立ち止まって考えたい。次は、具体的な外交の事例で確かめてみたい。</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p style="margin:0">© 2026 国際関係学ノート ／ <a href="about.html">このサイトについて</a></p>
+</footer>
+
+</body>
+</html>
