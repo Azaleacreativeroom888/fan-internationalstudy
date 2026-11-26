@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>このサイトについて｜国際関係学ノート</title>
+<meta name="description" content="国際関係学ノートについてのご案内、リンク集、お問い合わせフォーム。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#6495ed;
+  --blue-deep:#2f5fb8;
+  --ink:#1d2b45;
+  --paper:#f5f9ff;
+  --line:#d6e4fb;
+  --soft:#e8f0fd;
+  --mark:#fff3a8;
+  --err:#c0392b;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;color:var(--ink);font-family:var(--sans);line-height:1.85;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+a{color:var(--blue-deep)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+header{background:var(--blue);color:#fff}
+.bar{max-width:960px;margin:0 auto;padding:14px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.logo{font-family:var(--serif);font-weight:800;font-size:1.25rem;color:#fff;text-decoration:none;letter-spacing:.04em}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:6px;flex-wrap:wrap}
+nav a{display:block;padding:4px 14px;border-radius:999px;color:#fff;text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{background:rgba(255,255,255,.22)}
+nav a[aria-current="page"]{background:#fff;color:var(--blue-deep);font-weight:700}
+nav a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+
+main{max-width:960px;margin:0 auto;padding:36px 20px 48px}
+h1{font-family:var(--serif);font-weight:800;font-size:clamp(1.7rem,4.5vw,2.2rem);margin:0 0 6px;line-height:1.4}
+h1 span{background:linear-gradient(transparent 62%,var(--mark) 62%)}
+.intro{margin:0 0 8px;font-size:.95rem;color:#4a5d80}
+
+section{margin-top:30px}
+.page{background:#fff;border:2px solid var(--blue);border-radius:4px;padding:26px 28px 28px 52px;position:relative;
+  background-image:repeating-linear-gradient(transparent 0,transparent 33px,var(--soft) 33px,var(--soft) 34px);
+  box-shadow:4px 4px 0 var(--soft)}
+.page::before{content:"";position:absolute;left:36px;top:0;bottom:0;border-left:2px solid #ffb3b3}
+h2{font-family:var(--serif);font-size:1.45rem;margin:0 0 4px;line-height:1.5}
+.lead{margin:0 0 14px;font-size:.92rem;color:#4a5d80}
+.page p{margin:0 0 10px}
+.mark{background:linear-gradient(transparent 62%,var(--mark) 62%)}
+
+/* links */
+h3.group{font-size:.95rem;color:var(--blue-deep);margin:18px 0 8px;display:flex;align-items:center;gap:10px}
+h3.group::after{content:"";flex:1;border-top:2px dashed var(--line)}
+.links{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.card{display:flex;align-items:center;gap:12px;padding:12px 14px;background:#fff;border:2px solid var(--blue);border-left-width:6px;border-radius:4px;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-2px);box-shadow:3px 3px 0 var(--soft);background:var(--soft)}
+.card .ic{flex:none;width:40px;height:40px;display:grid;place-items:center;font-size:1.3rem;background:var(--soft);border-radius:4px}
+.card b{display:block;font-size:.95rem;color:var(--blue-deep);line-height:1.4}
+.card small{display:block;font-size:.78rem;color:#4a5d80;line-height:1.5}
+.card .go{margin-left:auto;color:var(--blue);font-size:1.2rem}
+
+/* form */
+.fgroup{margin-bottom:16px}
+label{display:block;font-weight:700;font-size:.9rem;margin-bottom:4px}
+.req{color:var(--err)}
+input,textarea{width:100%;font:inherit;color:var(--ink);background:#fff;border:2px solid var(--blue);border-radius:4px;padding:9px 12px}
+textarea{min-height:150px;resize:vertical}
+input:focus,textarea:focus{outline:3px solid var(--line);border-color:var(--blue-deep)}
+.field-error{display:block;color:var(--err);font-size:.82rem;margin-top:3px}
+.submit{font:inherit;font-weight:700;color:#fff;background:var(--blue);border:2px solid var(--blue);border-radius:6px;padding:9px 26px;cursor:pointer}
+.submit:hover{background:var(--blue-deep);border-color:var(--blue-deep)}
+.submit:disabled{opacity:.5;cursor:not-allowed}
+.form-success{display:none;background:var(--soft);border:2px solid var(--blue);border-radius:4px;padding:12px 16px;margin-bottom:16px;font-weight:700;color:var(--blue-deep)}
+.form-error-global{display:none;border:2px solid var(--err);color:var(--err);border-radius:4px;padding:10px 14px;margin-bottom:16px;font-size:.9rem;background:#fff}
+
+.back{display:inline-block;margin-top:24px;font-weight:700}
+
+footer{background:var(--blue-deep);color:#fff;text-align:center;padding:22px 20px;font-size:.82rem}
+footer p{max-width:760px;margin:0 auto 8px;line-height:1.8}
+footer a{color:#fff}
+
+@media (max-width:720px){
+  .page{padding:22px 18px 24px 40px}
+  .page::before{left:26px}
+  .links{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html">国際関係学ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="column.html">コラム</a></li>
+        <li><a href="about.html" aria-current="page">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1><span>このサイトについて</span></h1>
+  <p class="intro">サイトの紹介と、リンク・お問い合わせ先です。</p>
+
+  <section aria-labelledby="h-about">
+    <div class="page">
+      <h2 id="h-about">国際関係学ノートとは</h2>
+      <p>国際関係学を勉強している学生が、学んだことと考えたことをノートのように残していくサイトです。</p>
+      <p>ブログには日々の勉強ログを、コラムには漫画・イラスト・小論文を載せていきます。<span class="mark">間違いや勉強不足の部分</span>もあるかもしれませんが、少しずつ直しながら続けていきます。</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-links">
+    <div class="page">
+      <h2 id="h-links">リンク</h2>
+      <p class="lead">ご連絡は以下のSNSか、下のフォームからお願いします。</p>
+
+      <h3 class="group">漫画・イラスト掲載サイト</h3>
+      <div class="links">
+        <a class="card" href="https://rookie.shonenjump.com/users/14728546961183734555" target="_blank" rel="noopener">
+          <span class="ic" aria-hidden="true">📚</span>
+          <span><b>ジャンプルーキー</b><small>オリジナル漫画を掲載中</small></span>
+          <span class="go" aria-hidden="true">›</span>
+        </a>
+        <a class="card" href="https://www.pixiv.net/users/105728284" target="_blank" rel="noopener">
+          <span class="ic" aria-hidden="true">🎨</span>
+          <span><b>Pixiv</b><small>二次創作はこちらに掲載</small></span>
+          <span class="go" aria-hidden="true">›</span>
+        </a>
+      </div>
+
+      <h3 class="group">SNS・その他</h3>
+      <div class="links">
+        <a class="card" href="https://bsky.app/profile/azaleaazalea88.bsky.social" target="_blank" rel="noopener">
+          <span class="ic" aria-hidden="true">🦋</span>
+          <span><b>Bluesky</b><small>近況・作品のお知らせ</small></span>
+          <span class="go" aria-hidden="true">›</span>
+        </a>
+        <a class="card" href="https://www.youtube.com/@LilyPopins0512" target="_blank" rel="noopener">
+          <span class="ic" aria-hidden="true">🎬</span>
+          <span><b>YouTube（リリポピ）</b><small>動画チャンネル</small></span>
+          <span class="go" aria-hidden="true">›</span>
+        </a>
+        <a class="card" href="https://lilipopi.github.io/lilypopins/" target="_blank" rel="noopener">
+          <span class="ic" aria-hidden="true">🌸</span>
+          <span><b>リリポピのホームページ</b><small>別サイト</small></span>
+          <span class="go" aria-hidden="true">›</span>
+        </a>
+      </div>
+
+      <h3 class="group">Azalea72のホームページ</h3>
+      <div class="links">
+        <a class="card" href="https://azaleacreativeroom888.github.io/storyreviewazalea/" target="_blank" rel="noopener">
+          <span class="ic" aria-hidden="true">📖</span>
+          <span><b>書評サイト</b><small>本・アニメ・映画・ゲーム・小説の備忘録</small></span>
+          <span class="go" aria-hidden="true">›</span>
+        </a>
+        <a class="card" href="https://azaleacreativeroom888.github.io/fan-english/" target="_blank" rel="noopener">
+          <span class="ic" aria-hidden="true">🍔</span>
+          <span><b>英語サイト（English Site）</b><small>英語話者と英語学習者に向けたサイト</small></span>
+          <span class="go" aria-hidden="true">›</span>
+        </a>
+        <a class="card" href="https://azaleacreativeroom888.github.io/fan-watercolor/" target="_blank" rel="noopener">
+          <span class="ic" aria-hidden="true">☁️</span>
+          <span><b>水彩画サイト</b><small>水彩画掲載</small></span>
+          <span class="go" aria-hidden="true">›</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-form">
+    <div class="page">
+      <h2 id="h-form">お問い合わせフォーム</h2>
+      <p class="lead">ご質問・ご感想などはこちらからどうぞ。Gmailで受け取り、返信いたします。</p>
+
+      <div data-fs-success class="form-success" role="status">✦ メッセージを送信しました。ありがとうございます！</div>
+      <div data-fs-error class="form-error-global" role="alert"></div>
+
+      <form id="contact-form" action="https://formspree.io/f/maqvpvoz" method="POST">
+        <div class="fgroup">
+          <label for="name">お名前</label>
+          <input type="text" id="name" name="name" placeholder="お名前（ニックネームでもOK）" autocomplete="name">
+        </div>
+        <div class="fgroup">
+          <label for="email">メールアドレス <span class="req">*</span></label>
+          <input type="email" id="email" name="email" data-fs-field placeholder="example@email.com" autocomplete="email" required>
+          <span data-fs-error="email" class="field-error"></span>
+        </div>
+        <div class="fgroup">
+          <label for="message">メッセージ <span class="req">*</span></label>
+          <textarea id="message" name="message" data-fs-field placeholder="メッセージを入力してください…" rows="6" required></textarea>
+          <span data-fs-error="message" class="field-error"></span>
+        </div>
+        <button class="submit" type="submit" data-fs-submit-btn>📮 送信する</button>
+      </form>
+    </div>
+  </section>
+
+  <a class="back" href="index.html">← ホームに戻る</a>
+</main>
+
+<footer>
+  <p>当サイトに掲載されている画像・文章・作品について、AI学習への利用、トレース（トレパク）、無断転載・転載、二次利用を禁止します。スクリーンショットの転載・無断引用はご遠慮ください。</p>
+  <p>Please refrain from using any images, text, or works on this website for AI training, tracing, unauthorized reproduction, redistribution, or secondary use.</p>
+  <p>© 2026 国際関係学ノート</p>
+</footer>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'maqvpvoz' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body>
+</html>
